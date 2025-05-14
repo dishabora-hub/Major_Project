@@ -1,0 +1,6 @@
+Flask==2.2.5
+Flask-Login==0.6.2
+Flask-SQLAlchemy==3.0.5
+Werkzeug==2.2.3
+gunicorn==21.2.0  # If deploying to a server
+flask-wtf==1.1.1  # For handling forms securely

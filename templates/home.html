@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Fire Guardian- Smart Fire Detection</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .hero {
+      background: url("{{ url_for('static', filename='images/home.png') }}") no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .header {
+      position: absolute;
+      top: 20px;
+      left: -100%;
+      font-size: 40px;
+      font-weight: bold;
+      color: #FF5733;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+      z-index: 2;
+      animation: slideIn 1s forwards, fadeInText 2s ease-out;
+    }
+
+    @keyframes slideIn {
+      100% { left: 40px; }
+    }
+    @keyframes fadeInText {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      z-index: 2;
+      animation: fadeInNav 2s ease-out;
+    }
+    .nav-links a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      transition: color 0.3s ease, transform 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-links a i {
+      margin-right: 8px;
+      font-size: 1.1em;
+    }
+    .nav-links a:hover {
+      color: #FF5733;
+      transform: scale(1.1);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      padding: 0 20px;
+    }
+    .content h1 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    .content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .btn-custom {
+      background-color: #FF5733;
+      color: white;
+      font-size: 18px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-custom:hover {
+      background-color: #d4411e;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+      z-index: 2;
+    }
+
+    @keyframes fadeInNav {
+      0% { opacity: 0; transform: translateX(20px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+      .header { font-size: 36px; left: 20px; }
+      .nav-links a { font-size: 16px; margin-left: 15px; }
+      .content h1 { font-size: 34px; }
+      .content p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="overlay"></div>
+
+    <div class="header">Fire Guardian</div>
+
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+      <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i>About Us</a>
+      <a href="{{ url_for('faq') }}"><i class="fas fa-question-circle"></i>FAQs</a>
+      <a href="{{ url_for('contact') }}"><i class="fas fa-phone-alt"></i>Contact Us</a>
+    </div>
+
+    <div class="content">
+      <h1>Smart Fire Detection System</h1>
+      <p>Stay alert and safe with real-time fire monitoring & response technology.</p>
+    </div>
+
+    <div class="footer">
+      <a href="{{ url_for('login') }}" class="btn btn-custom">Get Started</a>
+    </div>
+  </div>
+</body>
+</html>

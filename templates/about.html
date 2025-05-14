@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us – Inferno Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* RESET & BASE */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body {
+      height:100vh;
+      overflow:hidden;             /* no scrollbars */
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display:flex; align-items:center; justify-content:center;
+      background: url("{{ url_for('static', filename='images/home.png') }}")
+                  no-repeat center center fixed;
+      background-size:cover;
+    }
+    .overlay {
+      position:absolute; top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,0.6);
+    }
+
+    /* CARD CONTAINER */
+    .about-container {
+      position:relative; z-index:2;
+      width:90%; max-width:800px;
+      height:90vh;                     /* fit within viewport */
+      background:rgba(0,0,0,0.75);
+      border-radius:12px;
+      padding:20px 25px;               /* tighter padding */
+      box-shadow:0 0 25px rgba(0,255,255,0.5);
+      backdrop-filter:blur(4px);
+      text-align:center;
+      display:flex;                    /* flex column to distribute content */
+      flex-direction:column;
+      justify-content:space-between;   /* distribute sections evenly */
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(20px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity:0; transform:translateX(-30px); }
+      to   { opacity:1; transform:translateX(0); }
+    }
+
+    /* HEADINGS & TEXT */
+    h1 {
+      font-size:2.2rem; color:#00ffff;
+      margin-bottom:10px;
+      text-shadow:1px 1px 4px rgba(0,0,0,0.8);
+      animation:slideInLeft 1s ease-out;
+    }
+    h2 {
+      font-size:1.5rem; color:#ffee33;
+      margin:12px 0 6px;
+      animation:fadeInUp 1s ease-out both;
+    }
+    p, ul {
+      font-size:0.9rem; color:#ddd;
+      line-height:1.4;
+      animation:fadeInUp 1s ease-out both;
+    }
+    ul { list-style:none; padding-left:0; }
+    ul li { margin:4px 0; }
+
+    .tagline {
+      font-size:1rem; font-weight:600;
+      margin-top:10px;
+      animation:fadeInUp 1s ease-out both;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="about-container">
+    <div>
+      <h1>About Us</h1>
+      <p><strong>Fire Guardian</strong> is an advanced fire detection system designed to enhance safety and prevent fire hazards in homes, offices, and industrial areas. Using cutting-edge AI and real-time monitoring, we ensure quick detection and alert authorities instantly.</p>
+    </div>
+
+    <div>
+      <h2>Our Mission</h2>
+      <p>We aim to minimize fire-related damages and save lives by providing an efficient, automated fire detection solution.</p>
+    </div>
+
+    <div>
+      <h2>What We Offer</h2>
+      <ul>
+        <li>• <strong>Real-Time Fire Detection</strong> – AI-powered image processing for immediate alerts.</li>
+        <li>• <strong>Instant Notifications</strong> – Get alerts via Siren, Email, or App.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Why Choose Fire Guardian.?</h2>
+      <ul>
+        <li>✔️ AI-Powered Accuracy</li>
+        <li>✔️ 24/7 Monitoring</li>
+        <li>✔️ User-Friendly Dashboard</li>
+        <li>✔️ Scalable for Any Space</li>
+      </ul>
+    </div>
+
+    <p class="tagline">🚀 Stay Safe. Stay Alert. Fire Guardian.</p>
+  </div>
+</body>
+</html>

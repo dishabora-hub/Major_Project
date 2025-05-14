@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <style>
+    body {
+      background: url("{{ url_for('static', filename='images/home.png') }}") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .dashboard-box {
+      max-width: 480px;
+      margin: 80px auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 35px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 191, 255, 0.6);
+      text-align: center;
+      color: #fff;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #544caf;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 18px;
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #45a049;
+    }
+  </style>
+
+  <div class="dashboard-box">
+    <h2><i class="fas fa-fire"></i> Fire Detection</h2>
+
+    <!-- Start Detection Button -->
+    <a href="{{ url_for('run_model') }}" class="btn-primary">
+      <i class="fas fa-flame"></i> Start Detection
+    </a>
+
+    <!-- View History Button -->
+    <a href="{{ url_for('location') }}" class="btn-primary">
+      <i class="fas fa-history"></i> View Detection History
+    </a>
+  </div>
+{% endblock %}
