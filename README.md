@@ -39,15 +39,6 @@ flask run
 The app will be available at:
 http://127.0.0.1:5000/
 
-📁 Project Structure
-
-Major_Project/
-│
-├── __pycache__/
-├── main.py               # Main detection logic
-├── requirements.txt      # List of required packages
-├── fire_detection_alert_system.py # Fire detection module
-├── README.md             # Project description
 
 📄 Synopsis
-A detailed project synopsis is available in the Word document included in the repository.
+A detailed project synopsis is available in the Word document [Fire_detection_Report.docx] included in the repository.
